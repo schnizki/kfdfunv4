@@ -23,13 +23,20 @@ jobs:
           theos-sdks: 'https://github.com/xybp888/iOS-SDKs'
 
           orion: 'false'
-      - name: Build
+      - name: Build and Install ChOma
         run: |
           cd ChOma
           sudo make install
-          echo "HELOOOOOOOOOO AAAAAAAAA"
-          ls -la output/tests
+          sudo cp output/tests/* /usr/bin
+      - name: Build kfdfun
+        run: |
           cd ../tools
           make
           cd ../app
           ./build.sh
+      - name: Create github release
+        id: upload-release
+        uses: actions/upload-release-assets@v2
+        with:
+          files: |
+            packages/kfdmineek.tipa
