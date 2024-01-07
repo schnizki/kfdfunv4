@@ -35,8 +35,28 @@ jobs:
           cd ../app
           ./build.sh
       - name: Create github release
-        id: upload-release
-        uses: actions/upload-release-assets@v2
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: |
-            packages/kfdmineek.tipa
+          tag_name: ${{ github.run_id }}
+          release_name: Automated Release ${{ github.run_id }}
+          body: |
+            This release is automated.
+          draft: false
+          prerelease: false
+      - name: Upload release
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./packages/kfdmineek.tipa
+          asset_name: kfdmineek.tipa
+          asset_content_type: application/octet-stream
+
+
+
+            
