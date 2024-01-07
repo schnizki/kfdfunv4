@@ -1,0 +1,29 @@
+name: iOS starter workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build and Test default scheme using any available iPhone simulator
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Prepare Theos
+        uses: Randomblock1/theos-action@v1
+        with:
+          theos-src: 'https://github.com/roothide/theos'
+          theos-sdks: 'https://github.com/xybp888/iOS-SDKs'
+
+          orion: 'false'
+      - name: Build
+        run: |
+          cd app
+          ./build.sh
