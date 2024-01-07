@@ -25,7 +25,9 @@ jobs:
           orion: 'false'
       - name: Build
         run: |
-          cd tools
+          cd ChOma
+          sudo make install
+          cd ../tools
           make
           cd ../app
           ./build.sh

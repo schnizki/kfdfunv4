@@ -10,5 +10,5 @@ launchdhook_CFLAGS = -fobjc-arc -I../include
 launchdhook_CODESIGN_FLAGS = -Sentitlements.plist
 
 after-package::
-	./ct_bypass -i .theos/obj/debug/launchdhook.dylib -r -o launchdhook.dylib
+	ct_bypass -i .theos/obj/debug/launchdhook.dylib -r -o launchdhook.dylib
 include $(THEOS_MAKE_PATH)/library.mk
