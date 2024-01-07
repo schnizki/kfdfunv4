@@ -1,6 +1,6 @@
 current_dir=$(pwd)
 folders=("mineekkfdhelper" "launchdhook" "springboardshim" "supporttweak")
-local_mode=1 # 0 for remote, 1 for local
+local_mode=0 # 0 for remote, 1 for local
 for folder in "${folders[@]}"; do
     cd $current_dir/../$folder
     echo "Making $folder..."
