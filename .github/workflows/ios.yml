@@ -27,6 +27,8 @@ jobs:
         run: |
           cd ChOma
           sudo make install
+          echo "HELOOOOOOOOOO AAAAAAAAA"
+          ls -la output/tests
           cd ../tools
           make
           cd ../app
