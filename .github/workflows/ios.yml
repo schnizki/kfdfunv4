@@ -29,9 +29,10 @@ jobs:
           sudo make install
           mkdir -p ~/.local/bin
           cp output/tests/* ~/.local/bin
-          echo "${HOME}/.local/bin" >> $GITHUB_PATH
+          export PATH="$PATH:${HOME}/.local/bin"
           cd ../tools
           make
+          cp insert_dylib ~/.local/bin
           cd ../app
           ./build.sh
       - name: Create github release
