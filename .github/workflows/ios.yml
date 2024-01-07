@@ -23,16 +23,13 @@ jobs:
           theos-sdks: 'https://github.com/xybp888/iOS-SDKs'
 
           orion: 'false'
-      - name: Build and Install ChOma
+      - name: Build
         run: |
           cd ChOma
           sudo make install
           mkdir -p ~/.local/bin
           cp output/tests/* ~/.local/bin
-      - name: Add ChOma to PATH
-        run: echo "${HOME}/.local/bin" >> $GITHUB_PATH
-      - name: Build kfdfun
-        run: |
+          echo "${HOME}/.local/bin" >> $GITHUB_PATH
           cd ../tools
           make
           cd ../app
