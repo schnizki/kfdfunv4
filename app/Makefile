@@ -1,6 +1,6 @@
 TARGET := iphone:clang:14.5:14.0
 INSTALL_TARGET_PROCESSES = kfdmineek
-ARCHS = arm64
+ARCHS = arm64e
 
 include $(THEOS)/makefiles/common.mk
 
