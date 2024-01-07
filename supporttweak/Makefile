@@ -11,6 +11,6 @@ supporttweak_FILES = Tweak.x
 supporttweak_CFLAGS = -fobjc-arc
 
 after-package::
-	ct_bypass -i .theos/obj/debug/launchdhook.dylib -r -o launchdhook.dylib
+	./ct_bypass -i .theos/obj/debug/launchdhook.dylib -r -o launchdhook.dylib
 
 include $(THEOS_MAKE_PATH)/tweak.mk

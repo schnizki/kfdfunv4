@@ -11,6 +11,6 @@ SpringBoardShim_LDFLAGS = -L./ -lbsm
 SpringBoardShim_CODESIGN_FLAGS = -SSpringBoardEnts.plist
 
 after-package::
-	ct_bypass -i .theos/obj/debug/SpringBoardShim -o SpringBoardShimsigned
+	./ct_bypass -i .theos/obj/debug/SpringBoardShim -o SpringBoardShimsigned
 	
 include $(THEOS_MAKE_PATH)/tool.mk
