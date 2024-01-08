@@ -261,7 +261,7 @@ uint32_t off_p_task = 0;
 
 void _offsets_init(void)
 {
-    if(SYSTEM_VERSION_EQUAL_TO(@"16.1.1")||SYSTEM_VERSION_EQUAL_TO(@"16.1.2")||SYSTEM_VERSION_EQUAL_TO(@"16.2")||SYSTEM_VERSION_EQUAL_TO(@"16.3")||SYSTEM_VERSION_EQUAL_TO(@"16.3.1")) {
+	  if(SYSTEM_VERSION_EQUAL_TO(@"16.1")||SYSTEM_VERSION_EQUAL_TO(@"16.1.1")||SYSTEM_VERSION_EQUAL_TO(@"16.1.2")||SYSTEM_VERSION_EQUAL_TO(@"16.2")||SYSTEM_VERSION_EQUAL_TO(@"16.3")||SYSTEM_VERSION_EQUAL_TO(@"16.3.1")) {
         NSLog(@"iOS <= 16.3.1 detected");
         off_p_list_le_prev = 0x8;
         off_p_proc_ro = 0x18;
