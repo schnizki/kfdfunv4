@@ -139,7 +139,7 @@ int sign_tweaks(void);
 		} else {
 			printf("[-] kernel not exploited, do that first\n");
 		}
-		userspaceReboot();
+
 		});
 	}]];
 
@@ -154,7 +154,7 @@ int sign_tweaks(void);
 		} else {
 			printf("[-] kernel not exploited, do that first\n");
 		}
-		userspaceReboot();
+
 		});
 	}]];
 
@@ -169,7 +169,7 @@ int sign_tweaks(void);
 		} else {
 			printf("[-] kernel not exploited, do that first\n");
 		}
-		userspaceReboot();
+
 		});
 	}]];
 
